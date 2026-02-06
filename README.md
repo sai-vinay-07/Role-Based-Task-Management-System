@@ -1,8 +1,8 @@
-# TaskFlow Manager – Role-Based Task Management System (Backend)
+# Role-Based Task Management System (Backend)
 
 ## Project Overview
 
-TaskFlow Manager is a backend REST API application designed to manage tasks with role-based access control. The system provides secure user authentication, allows users to create and manage tasks, and enforces role-based permissions across different user levels (User, Manager, Admin). The architecture follows MVC (Model-View-Controller) principles and prioritizes clean code, security, and scalability.
+Role-Based Task Management System (Backend) is a backend REST API application designed to manage tasks with role-based access control. The system provides secure user authentication, allows users to create and manage tasks, and enforces role-based permissions across different user levels (User, Manager, Admin). The architecture follows MVC (Model-View-Controller) principles and prioritizes clean code, security, and scalability.
 
 This is a **backend-only project** designed for integration with frontend applications or as a standalone API service.
 
@@ -253,8 +253,8 @@ Ensure the following are installed on your system:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/taskflow-manager.git
-cd taskflow-manager
+git clone https://github.com/your-username/role-based-task-management-system.git
+cd role-based-task-management-system
 ```
 
 ### Step 2: Install Dependencies
