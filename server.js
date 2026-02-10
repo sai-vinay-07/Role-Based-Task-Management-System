@@ -32,7 +32,6 @@ app.use('/api/auth', AuthRouter)
 app.use('/api/users', UserRouter)
 app.use('/api/tasks', TaskRouter)
 
-
 app.get('/', (req, res) => {
   res.status(200).send(`
     <!DOCTYPE html>
@@ -42,9 +41,9 @@ app.get('/', (req, res) => {
       <title>Task Management API</title>
       <style>
         body {
-          font-family: system-ui, sans-serif;
-          background: #0f172a;
-          color: #e5e7eb;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+          background: #f8fafc;
+          color: #1f2937;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -52,38 +51,46 @@ app.get('/', (req, res) => {
           margin: 0;
         }
         .card {
-          background: #020617;
+          background: #ffffff;
           padding: 32px 40px;
-          border-radius: 12px;
+          border-radius: 10px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
           max-width: 520px;
           text-align: center;
         }
         h1 {
           margin: 0 0 12px;
-          color: #38bdf8;
+          font-size: 1.6rem;
+          font-weight: 600;
         }
         p {
+          margin: 8px 0;
           font-size: 0.95rem;
-          color: #cbd5f5;
           line-height: 1.5;
+          color: #374151;
         }
         code {
-          background: #1e293b;
+          background: #f1f5f9;
           padding: 4px 8px;
           border-radius: 6px;
-          color: #7dd3fc;
+          font-size: 0.85rem;
         }
         a {
-          color: #38bdf8;
-          text-decoration: none;
+          color: #111827;
+          text-decoration: underline;
           font-weight: 500;
+        }
+        .status {
+          margin-top: 16px;
+          font-size: 0.9rem;
+          color: #065f46;
         }
       </style>
     </head>
     <body>
       <div class="card">
         <h1>Role-Based Task Management API</h1>
-        <p>Backend REST API with JWT authentication and RBAC.</p>
+        <p>Backend REST API with JWT authentication and role-based access control.</p>
         <p>
           Base routes:
           <br />
@@ -96,7 +103,7 @@ app.get('/', (req, res) => {
             View GitHub Repository
           </a>
         </p>
-        <p>API is running</p>
+        <p class="status">API status: running</p>
       </div>
     </body>
     </html>
