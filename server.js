@@ -39,121 +39,70 @@ app.get('/', (req, res) => {
     <html lang="en">
     <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Role-Based Task Management API</title>
+      <title>Task Management API</title>
       <style>
         body {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-                       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          background-color: #0f172a;
+          font-family: system-ui, sans-serif;
+          background: #0f172a;
           color: #e5e7eb;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
           margin: 0;
-          padding: 0;
         }
-        .container {
-          max-width: 900px;
-          margin: 0 auto;
-          padding: 60px 20px;
+        .card {
+          background: #020617;
+          padding: 32px 40px;
+          border-radius: 12px;
+          max-width: 520px;
+          text-align: center;
         }
         h1 {
+          margin: 0 0 12px;
           color: #38bdf8;
-          font-size: 2.4rem;
-          margin-bottom: 10px;
         }
         p {
-          font-size: 1.05rem;
-          line-height: 1.6;
+          font-size: 0.95rem;
           color: #cbd5f5;
-        }
-        .badge {
-          display: inline-block;
-          background: #1e293b;
-          color: #38bdf8;
-          padding: 6px 12px;
-          border-radius: 999px;
-          font-size: 0.85rem;
-          margin-bottom: 20px;
-        }
-        .section {
-          margin-top: 40px;
-        }
-        ul {
-          margin: 15px 0 0 20px;
-        }
-        li {
-          margin-bottom: 10px;
+          line-height: 1.5;
         }
         code {
-          background: #020617;
+          background: #1e293b;
           padding: 4px 8px;
           border-radius: 6px;
           color: #7dd3fc;
-          font-size: 0.95rem;
-        }
-        footer {
-          margin-top: 60px;
-          font-size: 0.9rem;
-          color: #94a3b8;
         }
         a {
           color: #38bdf8;
           text-decoration: none;
-        }
-        a:hover {
-          text-decoration: underline;
+          font-weight: 500;
         }
       </style>
     </head>
     <body>
-      <div class="container">
-        <span class="badge">Backend API</span>
-        <h1>Role-Based Task Management System</h1>
+      <div class="card">
+        <h1>Role-Based Task Management API</h1>
+        <p>Backend REST API with JWT authentication and RBAC.</p>
         <p>
-          This is a backend-only RESTful API built using <strong>Node.js</strong>,
-          <strong>Express.js</strong>, and <strong>MongoDB</strong>, designed around
-          secure authentication, role-based access control, and task ownership enforcement.
+          Base routes:
+          <br />
+          <code>/api/auth</code> ·
+          <code>/api/users</code> ·
+          <code>/api/tasks</code>
         </p>
-
-        <div class="section">
-          <h2>🔐 Core Features</h2>
-          <ul>
-            <li>JWT-based authentication and authorization</li>
-            <li>Role-Based Access Control (User, Manager, Admin)</li>
-            <li>Task lifecycle management with ownership validation</li>
-            <li>Middleware-driven route protection</li>
-            <li>Centralized error handling</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>📌 API Base Paths</h2>
-          <ul>
-            <li><code>/api/auth</code> – Authentication & login</li>
-            <li><code>/api/users</code> – User operations</li>
-            <li><code>/api/tasks</code> – Task management</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>📦 Source Code</h2>
-          <p>
-            GitHub Repository:
-            <a href="https://github.com/sai-vinay-07/Role-Based-Task-Management-System" target="_blank">
-              View on GitHub
-            </a>
-          </p>
-        </div>
-
-        <footer>
-          <p>
-            Status: <strong>API is running</strong> ✅
-          </p>
-        </footer>
+        <p>
+          <a href="https://github.com/sai-vinay-07/Role-Based-Task-Management-System" target="_blank">
+            View GitHub Repository
+          </a>
+        </p>
+        <p>API is running</p>
       </div>
     </body>
     </html>
   `)
 })
+
 
 const PORT = process.env.PORT || 8081;
 
