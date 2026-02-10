@@ -353,7 +353,6 @@ http://localhost:8081/api
 - **Audit Logging**: Track user actions and system events for compliance
 - **Rate Limiting**: Implement API rate limiting for security
 - **Input Validation**: Enhanced validation using libraries like Joi or Yup
-- **Error Handling**: Centralized error handling and logging system
 - **Unit Testing**: Comprehensive test coverage with Jest or Mocha
 - **API Documentation**: Auto-generated API docs with Swagger/OpenAPI
 
@@ -391,3 +390,18 @@ For issues, questions, or suggestions, please open an issue in the repository or
 **Version**: 1.0.0  
 **Last Updated**: February 2026  
 **Status**: Active Development
+
+---
+
+### JSON Payloads
+
+Ensure request bodies sent with `Content-Type: application/json` are valid JSON. Property names and string values must use double quotes. Example:
+
+```json
+{
+    "email": "user@example.com",
+    "password": "securePassword123"
+}
+```
+
+Malformed JSON (single quotes, trailing commas, or unwrapped properties) will cause a 400 parse error. If you see a parse error, check the raw body and reformat to valid JSON.

@@ -3,7 +3,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
 dotenv.config()
-const {connectDB} = require('./config/db')
+const { connectDB } = require('./config/db')
 const AuthRouter = require('./routers/auth.routes')
 const UserRouter = require('./routers/user.routes')
 const TaskRouter = require('./routers/task.routes')
@@ -12,14 +12,26 @@ dotenv.config();
 const app = express();
 
 //Middleware 
-app.use(cors({origin:'*'}))
+app.use(cors({ origin: '*' }))
 app.use(express.json())
 app.use(cookieParser())
 
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.type === 'entity.parse.failed') {
+    return res.status(400).json({
+      success: false,
+      message: 'Invalid JSON payload. Use valid JSON with double quotes and no trailing commas.'
+    })
+  }
+  next(err)
+})
+
+
 //Api's 
-app.use('/api/auth',AuthRouter)
-app.use('/api/users',UserRouter)
-app.use('/api/tasks',TaskRouter)
+app.use('/api/auth', AuthRouter)
+app.use('/api/users', UserRouter)
+app.use('/api/tasks', TaskRouter)
+
 
 const PORT = process.env.PORT || 8081;
 
